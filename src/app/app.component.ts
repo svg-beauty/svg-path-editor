@@ -68,6 +68,7 @@ export class AppComponent implements AfterViewInit {
   wasCanvasDragged = false;
   draggedIsNew = false;
   dragging = false;
+	cursorPosition?: Point & {decimals?: number};
 
   // Images
   images: Image[] = [];
@@ -167,6 +168,10 @@ export class AppComponent implements AfterViewInit {
       this.draggedIsNew = false;
     }
   }
+
+	setCursorPosition(position?: Point & {decimals?: number}) {
+		this.cursorPosition = position;
+	}
 
   setHistoryDisabled(value: boolean) {
     this.historyDisabled = value;
